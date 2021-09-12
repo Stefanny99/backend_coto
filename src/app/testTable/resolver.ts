@@ -4,7 +4,7 @@ import { getAllData } from "./loader";
 export const typeDef = gql`
   type TestTable {
     id: ID
-    TestingString: String
+    testing_string: String
   }
 
   input TestTableInput {

@@ -2,6 +2,8 @@ import { queriesDef as queries } from "./queriesDef/queries";
 // import { mutationsDef as mutations } from "./mutationsDef/mutations";
 const { ApolloServer } = require("apollo-server");
 const merge = require("lodash.merge");
+import * as dotenv from "dotenv";
+dotenv.config();
 
 import {
   typeDef as testTable,
@@ -9,10 +11,10 @@ import {
 } from "./app/testTable/resolver";
 
 const server = new ApolloServer({
-  introspection: true,
-  playground: true,
   typeDefs: [queries, /*mutations,*/ testTable],
   resolvers: merge(testTableResolvers),
+  introspection: true,
+  playground: true,
 });
 
 server.listen(process.env.APP_PORT).then(({ url }) => {
