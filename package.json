@@ -6,9 +6,11 @@
   "dependencies": {
     "apollo-server": "^3.3.0",
     "apollo-server-express": "^3.3.0",
+    "bookshelf": "^1.2.0",
     "express": "^4.17.1",
     "graphql": "^15.5.3",
     "knex": "^0.95.11",
+    "lodash.merge": "^4.6.2",
     "mysql": "^2.18.1",
     "type-graphql": "^1.1.1"
   },
