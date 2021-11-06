@@ -9,7 +9,7 @@ export const typeDef = gql`
 
   input TestTableInput {
     id: ID
-    TestingString: String
+    testing_string: String
   }
 `;
 
