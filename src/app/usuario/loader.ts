@@ -17,16 +17,16 @@ export const editarUsuario = (usuario) =>
 export const login = async (usuario, contrasena) => {
   const usu = await getByUserName(usuario);
   if (usu) {
-    if (contrasena === decrypt(usuario.contrasena)) return usu;
+    if (contrasena === decrypt(usu.contrasena)) return usu;
     else throw new AuthenticationError("Contraseña incorrecta");
   } else throw new AuthenticationError("Usuario no encontrado");
 };
 
 export const getByUserName = (usuario) =>
   Usuario.collection()
-    .query((usuario) => usuario.where({ usuario }))
+    .query((data) => data.where({ usuario: "admin" }))
     .fetchOne({ require: false })
-    .then((usuario) => (usuario && usuario.toJSON()) || null);
+    .then((data) => (data && data.toJSON()) || null);
 
 export const eliminarUsuario = (id) =>
   Usuario.forge({ id })
