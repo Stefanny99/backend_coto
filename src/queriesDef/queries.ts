@@ -5,5 +5,7 @@ export const queriesDef = gql`
     login(usuario: String!, contrasena: String!): Usuario
     obtenerSocios: [Socio]
     obtenerInventario: [Inventario]
+    busquedaSocio(texto: String): [Socio]
+    busquedaInventario(texto: String): [Inventario]
   }
 `;

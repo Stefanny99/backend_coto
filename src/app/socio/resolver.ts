@@ -1,6 +1,11 @@
 import { gql } from "apollo-server";
 
-import { editarSocio, obtenerSocios, registrarSocio } from "./loader";
+import {
+  busquedaSocio,
+  editarSocio,
+  obtenerSocios,
+  registrarSocio,
+} from "./loader";
 
 export const typeDef = gql`
   type Socio {
@@ -21,6 +26,7 @@ export const typeDef = gql`
 export const resolvers = {
   Query: {
     obtenerSocios: () => obtenerSocios(),
+    busquedaSocio: (_, { texto }) => busquedaSocio(texto),
   },
   Mutation: {
     registrarSocio: (_, { socio }) => registrarSocio(socio),

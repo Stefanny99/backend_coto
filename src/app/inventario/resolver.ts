@@ -1,6 +1,7 @@
 import { gql } from "apollo-server";
 
 import {
+  busquedaInventario,
   editarInventario,
   obtenerInventario,
   registrarInventario,
@@ -39,6 +40,7 @@ export const typeDef = gql`
 export const resolvers = {
   Query: {
     obtenerInventario: () => obtenerInventario(),
+    busquedaInventario: (_, { texto }) => busquedaInventario(texto),
   },
   Mutation: {
     registrarInventario: (_, { inventario }) => registrarInventario(inventario),
