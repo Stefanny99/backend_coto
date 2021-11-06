@@ -9,5 +9,12 @@ export const mutationsDef = gql`
     registrarSocio(socio: SocioInput!): Boolean
     editarSocio(socio: SocioInput!): Boolean
     desactivarSocio(id: ID!): Boolean
+
+    registrarPedido(pedido: PedidoInput!): Boolean
+    eliminarPedido(id: ID!): Boolean
+
+    registrarInventario(inventario: InventarioInput!): Boolean
+    editarInventario(inventario: InventarioInput!): Boolean
+    desactivarInventario(id: ID!): Boolean
   }
 `;

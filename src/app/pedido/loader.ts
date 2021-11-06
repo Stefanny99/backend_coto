@@ -11,3 +11,9 @@ export const eliminarPedido = (id) =>
     .destroy()
     .then(() => true)
     .catch(() => false);
+
+export const pedidosUsuario = (id) =>
+  Pedido.collection()
+    .query((data) => data.where({ fk_usuario: id }))
+    .fetch({ require: false })
+    .then((data) => (data && data.toJSON()) || null);

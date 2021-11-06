@@ -1,4 +1,5 @@
 import { gql } from "apollo-server";
+import { pedidosUsuario } from "../pedido/loader";
 
 import {
   editarUsuario,
@@ -14,6 +15,7 @@ export const typeDef = gql`
     nombre: String
     usuario: String
     contrasena: String
+    pedidos: [Pedido]
   }
 
   input UsuarioInput {
@@ -27,7 +29,7 @@ export const typeDef = gql`
 
 export const resolvers = {
   Usuario: {
-    //pedidos: ({ id }) => pedidosUsuario(id)
+    pedidos: ({ id }) => pedidosUsuario(id),
   },
   Query: {
     login: (_, { usuario, contrasena }) => login(usuario, contrasena),

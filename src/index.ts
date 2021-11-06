@@ -6,11 +6,6 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 import {
-  typeDef as testTable,
-  resolvers as testTableResolvers,
-} from "./app/testTable/resolver";
-
-import {
   typeDef as usuario,
   resolvers as usuarioResolvers,
 } from "./app/usuario/resolver";
@@ -20,9 +15,24 @@ import {
   resolvers as socioResolvers,
 } from "./app/socio/resolver";
 
+import {
+  typeDef as pedido,
+  resolvers as pedidoResolvers,
+} from "./app/pedido/resolver";
+
+import {
+  typeDef as inventario,
+  resolvers as inventarioResolvers,
+} from "./app/inventario/resolver";
+
 const server = new ApolloServer({
-  typeDefs: [queries, mutations, testTable, usuario, socio],
-  resolvers: merge(testTableResolvers, usuarioResolvers, socioResolvers),
+  typeDefs: [queries, mutations, usuario, socio, pedido, inventario],
+  resolvers: merge(
+    usuarioResolvers,
+    socioResolvers,
+    pedidoResolvers,
+    inventarioResolvers
+  ),
   introspection: true,
   playground: true,
 });

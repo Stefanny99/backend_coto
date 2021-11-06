@@ -17,6 +17,8 @@ export const typeDef = gql`
     cantidad: Int
     imagen: String
     estado: String
+    whatsapp: String
+    email: String
   }
 
   input InventarioInput {
@@ -29,6 +31,8 @@ export const typeDef = gql`
     cantidad: Int
     imagen: String
     estado: String
+    whatsapp: String
+    email: String
   }
 `;
 
@@ -39,6 +43,5 @@ export const resolvers = {
   Mutation: {
     registrarInventario: (_, { inventario }) => registrarInventario(inventario),
     editarInventario: (_, { inventario }) => editarInventario(inventario),
-    //eliminarInventario: (_, { id }) => eliminarInventario(id),
   },
 };

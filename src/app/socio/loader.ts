@@ -12,12 +12,6 @@ export const editarSocio = (socio) =>
     .then(() => true)
     .catch(() => false);
 
-export const desactivarSocio = (id) =>
-  Socio.forge({ id })
-    .save({ estado: "I" }, { patch: true })
-    .then(() => true)
-    .catch(() => false);
-
 export const obtenerSocios = () =>
   Socio.collection()
     .fetch({ require: false })

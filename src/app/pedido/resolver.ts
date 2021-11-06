@@ -19,9 +19,6 @@ export const typeDef = gql`
 `;
 
 export const resolvers = {
-  //Query: {
-  //  obtenerPedidos: () => obtenerPedidos(),
-  //},
   Mutation: {
     registrarPedido: (_, { pedido }) => registrarPedido(pedido),
     eliminarPedido: (_, { id }) => eliminarPedido(id),

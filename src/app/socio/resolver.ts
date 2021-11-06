@@ -1,11 +1,6 @@
 import { gql } from "apollo-server";
 
-import {
-  desactivarSocio,
-  editarSocio,
-  obtenerSocios,
-  registrarSocio,
-} from "./loader";
+import { editarSocio, obtenerSocios, registrarSocio } from "./loader";
 
 export const typeDef = gql`
   type Socio {
@@ -30,6 +25,5 @@ export const resolvers = {
   Mutation: {
     registrarSocio: (_, { socio }) => registrarSocio(socio),
     editarSocio: (_, { socio }) => editarSocio(socio),
-    desactivarSocio: (_, { id }) => desactivarSocio(id),
   },
 };
