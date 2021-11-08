@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
+  "compilerOptions": {
+    "esModuleInterop": true
+  },
   "engines": {
     "node": "14.x"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "tsc",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts",
+    "start": "ts-node ./src/index.ts"
   },
   "dependencies": {
     "apollo-server": "^3.3.0",
