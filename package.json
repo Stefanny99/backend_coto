@@ -26,7 +26,7 @@
   },
   "scripts": {
     "dev": "nodemon src/index.ts --exec ts-node",
-    "start": "nodemon src/index.ts"
+    "start": "nodemon src/index.ts --exec ts-node"
   },
   "keywords": [],
   "author": "",
