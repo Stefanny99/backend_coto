@@ -15,7 +15,6 @@ export const editarUsuario = (usuario) =>
     .catch(() => false);
 
 export const login = async (usuario, contrasena) => {
-  console.log(usuario);
   const usu = await getByUserName(usuario);
   if (usu) {
     if (contrasena === decrypt(usu.contrasena)) return usu;
