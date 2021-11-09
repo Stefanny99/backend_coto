@@ -6,9 +6,6 @@
   "compilerOptions": {
     "esModuleInterop": true
   },
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
     "start": "ts-node ./src/index.ts"
   },
