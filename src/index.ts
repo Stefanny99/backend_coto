@@ -33,13 +33,7 @@ const server = new ApolloServer({
     pedidoResolvers,
     inventarioResolvers
   ),
-  introspection: true,
-  playground: true,
 });
-
-//server.listen(process.env.APP_PORT || 5050).then(({ url }) => {
-//  console.log(`🚀  Server ready at ${url}`);
-//});
 
 server.listen({ port: process.env.PORT }).then(({ url, subscriptionsUrl }) => {
   console.log(`
