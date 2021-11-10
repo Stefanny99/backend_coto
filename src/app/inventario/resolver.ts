@@ -19,7 +19,7 @@ export const typeDef = gql`
     imagen: String
     estado: String
     whatsapp: String
-    email: String
+    correo: String
   }
 
   input InventarioInput {
@@ -33,7 +33,7 @@ export const typeDef = gql`
     imagen: String
     estado: String
     whatsapp: String
-    email: String
+    correo: String
   }
 `;
 
