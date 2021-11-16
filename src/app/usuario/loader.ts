@@ -33,3 +33,9 @@ export const eliminarUsuario = (id) =>
     .destroy()
     .then(() => true)
     .catch(() => false);
+
+export const usuarioPorId = (id) =>
+  Usuario.collection()
+    .query((user) => user.where({ id }))
+    .fetchOne({ require: false })
+    .then((user) => (user && user.toJSON()) || null);

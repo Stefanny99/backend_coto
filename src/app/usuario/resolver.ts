@@ -6,6 +6,7 @@ import {
   eliminarUsuario,
   login,
   registrarUsuario,
+  usuarioPorId,
 } from "./loader";
 
 export const typeDef = gql`
@@ -33,6 +34,7 @@ export const resolvers = {
   },
   Query: {
     login: (_, { usuario, contrasena }) => login(usuario, contrasena),
+    usuarioPorId: (_, { id }) => usuarioPorId(id),
   },
   Mutation: {
     registrarUsuario: (_, { usuario }) => registrarUsuario(usuario),

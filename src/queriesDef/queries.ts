@@ -7,5 +7,6 @@ export const queriesDef = gql`
     obtenerInventario: [Inventario]
     busquedaSocio(texto: String): [Socio]
     busquedaInventario(texto: String): [Inventario]
+    usuarioPorId(id: ID): Usuario
   }
 `;
