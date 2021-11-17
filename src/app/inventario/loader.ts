@@ -3,8 +3,7 @@ import Inventario from "./model";
 export const registrarInventario = (inventario) =>
   Inventario.forge({ ...inventario })
     .save(null, { method: "insert" })
-    .then(() => true)
-    .catch(() => false);
+    .then((data) => (data && data.toJSON()) || null);
 
 export const editarInventario = (inventario) =>
   Inventario.forge({ id: inventario.id })

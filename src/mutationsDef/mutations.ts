@@ -13,7 +13,7 @@ export const mutationsDef = gql`
     registrarPedido(pedido: PedidoInput!): Boolean
     eliminarPedido(id: ID!): Boolean
 
-    registrarInventario(inventario: InventarioInput!): Boolean
+    registrarInventario(inventario: InventarioInput!): Inventario
     editarInventario(inventario: InventarioInput!): Boolean
     desactivarInventario(id: ID!): Boolean
   }
