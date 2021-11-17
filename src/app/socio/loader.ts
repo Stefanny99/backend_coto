@@ -3,8 +3,7 @@ import Socio from "./model";
 export const registrarSocio = (socio) =>
   Socio.forge({ ...socio })
     .save(null, { method: "insert" })
-    .then(() => true)
-    .catch(() => false);
+    .then((data) => (data && data.toJSON()) || null);
 
 export const editarSocio = (socio) =>
   Socio.forge({ id: socio.id })

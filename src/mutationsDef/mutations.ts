@@ -6,7 +6,7 @@ export const mutationsDef = gql`
     editarUsuario(usuario: UsuarioInput!): Boolean
     eliminarUsuario(id: ID!): Boolean
 
-    registrarSocio(socio: SocioInput!): Boolean
+    registrarSocio(socio: SocioInput!): Socio
     editarSocio(socio: SocioInput!): Boolean
     desactivarSocio(id: ID!): Boolean
 
