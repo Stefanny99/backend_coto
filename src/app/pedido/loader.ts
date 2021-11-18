@@ -3,8 +3,7 @@ import Pedido from "./model";
 export const registrarPedido = (pedido) =>
   Pedido.forge({ ...pedido })
     .save(null, { method: "insert" })
-    .then(() => true)
-    .catch(() => false);
+    .then((data) => (data && data.toJSON()) || null);
 
 export const eliminarPedido = (id) =>
   Pedido.forge({ id })

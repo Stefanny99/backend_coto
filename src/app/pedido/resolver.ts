@@ -7,6 +7,7 @@ export const typeDef = gql`
     id: ID
     fk_usuario: String
     fk_inventario: ID
+    cantidad: Int
     estado: String
   }
 
@@ -14,6 +15,7 @@ export const typeDef = gql`
     id: ID
     fk_usuario: String
     fk_inventario: ID
+    cantidad: Int
     estado: String
   }
 `;
