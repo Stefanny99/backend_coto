@@ -24,8 +24,11 @@ export const obtenerInventario = () =>
 
 export const busquedaInventario = (texto) =>
   Inventario.collection()
-    .where("nombre", "LIKE", `%${texto}%`)
-    .orWhere("codigo", "LIKE", `%${texto}%`)
+    .query((data) =>
+      data
+        .where("nombre", "LIKE", `%${texto}%`)
+        .orWhere("codigo", "LIKE", `%${texto}%`)
+    )
     .fetch({ require: false })
     .then((data) => (data && data.toJSON()) || null);
 

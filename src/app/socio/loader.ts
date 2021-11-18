@@ -18,7 +18,10 @@ export const obtenerSocios = () =>
 
 export const busquedaSocio = (texto) =>
   Socio.collection()
-    .where("nombre", "LIKE", `%${texto}%`)
-    .orWhere("cedula", "LIKE", `%${texto}%`)
+    .query((data) =>
+      data
+        .where("nombre", "LIKE", `%${texto}%`)
+        .orWhere("cedula", "LIKE", `%${texto}%`)
+    )
     .fetch({ require: false })
     .then((data) => (data && data.toJSON()) || null);
