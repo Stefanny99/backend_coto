@@ -16,3 +16,8 @@ export const pedidosUsuario = (id) =>
     .query((data) => data.where({ fk_usuario: id }))
     .fetch({ require: false })
     .then((data) => (data && data.toJSON()) || null);
+
+export const obtenerPedidos = () =>
+  Pedido.collection()
+    .fetch({ require: false })
+    .then((data) => (data && data.toJSON()) || null);

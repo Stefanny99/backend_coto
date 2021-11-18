@@ -1,7 +1,7 @@
 import { gql } from "apollo-server";
 import { obtenerInventarioPorId } from "../inventario/loader";
 
-import { eliminarPedido, registrarPedido } from "./loader";
+import { eliminarPedido, obtenerPedidos, registrarPedido } from "./loader";
 
 export const typeDef = gql`
   type Pedido {
@@ -26,6 +26,7 @@ export const resolvers = {
   Pedido: {
     producto: ({ fk_inventario }) => obtenerInventarioPorId(fk_inventario),
   },
+  Query: { obtenerPedidos: () => obtenerPedidos() },
   Mutation: {
     registrarPedido: (_, { pedido }) => registrarPedido(pedido),
     eliminarPedido: (_, { id }) => eliminarPedido(id),
